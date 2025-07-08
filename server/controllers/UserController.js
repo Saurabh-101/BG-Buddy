@@ -1,9 +1,66 @@
-
+import  {Webhook} from 'svix'
+import userModel from '../models/userModel';
 // API Controller Function to manage Clerk User with database
 // http://localhost:4000/api/user/webhooks
 
-
-const clerkWebhooks = async(req,res)=>{
-
+const clerkWebhooks = async(req,res) =>{
     
+    try {
+        
+        // create a svix event with clerk webhook secret
+        const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET);
+
+        await whook.verify(JSON.stringify(req.body),{
+            "svix-id":req.headers["svix-id"],
+            "svix-timestamp": req.headers["svix-timestamp"],
+            "svix-signature": req.headers["svix-signature"]
+        })
+
+        const {data, type} = req.body;
+        
+        switch(type){
+
+            case "user.created":{
+            
+                const userData = {
+                    clerkId : data.id,
+                    email: data.email_addresses[0].email_address,
+                    firstName: data.first_name,
+                    lastName: data.last_name,
+                    photo: data.image_url
+                }
+
+                await userModel.create(userData);
+                res.json({
+                    success:true,
+                    msg:"User Created in database"
+                })
+
+                break;
+            }
+
+            case "user.updated":{
+
+                break;
+            }
+
+            case "user.deleted":{
+
+                break;
+            }
+
+            default:
+                break;
+        }
+        
+
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success:false,
+            msg:error.message
+        })
+        
+    }
+
 }
