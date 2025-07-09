@@ -71,7 +71,8 @@ BG-Buddy/
 
 #### 1. Clone the repository
 
-```bash
+```
+bash
 git clone https://github.com/Saurabh-101/BG-Buddy.git
 cd BG-Buddy
 ```
@@ -80,42 +81,47 @@ cd BG-Buddy
 
 **Frontend:**
 
-\`\`\`bash
+```
+bash
 cd client
 npm install
-\`\`\`
+```
 
 **Backend:**
 
-\`\`\`bash
+```
+bash
 cd ../server
 npm install
-\`\`\`
+```
 
 #### 3. Environment Variables
 
 Create a `.env` file inside `server/` with the following:
 
-\`\`\`env
+```
+env
 PORT=5000
 MONGO_URI=your_mongodb_atlas_connection_string
-\`\`\`
+```
 
 #### 4. Run the app
 
 **Backend:**
 
-\`\`\`bash
+```
+bash
 cd server
 npm run dev
-\`\`\`
+```
 
 **Frontend:**
 
-\`\`\`bash
+```
+bash
 cd client
 npm start
-\`\`\`
+```
 
 Visit `http://localhost:3000` to view the app.
 
