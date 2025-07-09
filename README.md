@@ -53,7 +53,7 @@ Make sure you have the following installed:
 
 ### 🧩 Project Structure
 
-\`\`\`
+```
 BG-Buddy/
 ├── client/               # Frontend (React)
 │   └── src/
@@ -63,7 +63,7 @@ BG-Buddy/
 │   └── models/
 ├── .env
 └── README.md
-\`\`\`
+```
 
 ---
 
@@ -71,10 +71,10 @@ BG-Buddy/
 
 #### 1. Clone the repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/Saurabh-101/BG-Buddy.git
 cd BG-Buddy
-\`\`\`
+```
 
 #### 2. Install dependencies
 
