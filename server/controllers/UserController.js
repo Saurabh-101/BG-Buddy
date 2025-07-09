@@ -87,7 +87,6 @@ const userCredit = async(req,res) =>{
         const { clerkId } = req.body;
         const userData = await userModel.findOne({clerkId});
         
-        
         res.json({
             success:true,
             credits:userData.creditBalance
