@@ -80,7 +80,7 @@ const AppContextProvider = (props) =>{
     }
 
     const value = {
-        credit, setCredit, loadCreditsData, backendUrl, image, setImage, removeBg, resultImage,setResultImage
+        credit, setCredit, loadCreditsData, backendUrl, image, setImage, removeBg, resultImage,setResultImage,navigate
     }
 
     return (
