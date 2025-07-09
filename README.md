@@ -139,6 +139,20 @@ Uses `Multer` to handle image uploads and sends files to the background removal 
 
 ---
 
+## 🔐 Authentication with Clerk
+
+BG Buddy integrates [Clerk](https://clerk.com) for secure and seamless user authentication.
+
+### ✨ Authentication Features:
+- 👤 User sign-up and sign-in with email/password or OAuth providers
+- 🔐 Secure session management with automatic token refresh
+- 🚪 User logout with session termination
+- 🧭 Route protection for authenticated features
+
+Clerk handles all the heavy lifting for user identity, making it easy to integrate authentication flows directly into the React frontend and Node backend.
+
+---
+
 ## 📦 Deployment
 
 - **Frontend:** Deployed on [Vercel](https://vercel.com/)
